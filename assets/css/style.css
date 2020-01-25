@@ -28,6 +28,15 @@ nav a:hover {
     width: 100%;
  
 }
+.cartButton {
+    position: relative;
+    margin-left: 50px;
+}
+.cartButton p {
+    position: absolute;
+    top: 0px;
+    right: 7px;
+} 
 .details-wrapper h3{
     text-transform: capitalize;
 }
@@ -40,4 +49,41 @@ nav a:hover {
 }
 .product-wrapper {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.table {
+    border: 1px solid #dbdbdb;
+}
+.table select {
+    width: 56px;
+    height: 33px;
+    border: 1px solid #dbdbdb;
+    padding: 0 8px;
+}
+.table>thead>tr>th {
+    border: none;
+    background: #f1f1f1;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #5a4a3b;
+    text-align: left;
+    vertical-align: middle;
+    padding: 0 30px;
+    line-height: 58px;
+}
+.table>tbody>tr>td {
+    padding: 38px 30px;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 14px;
+    color: #4a4642;
+    font-weight: 500;
+}
+.table>tbody>tr>td>img {
+    max-width: 100px;
+}
+.table tr{
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.09);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.09);
 }

@@ -20,17 +20,76 @@
                 <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
                     <ul class="nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Accueil</a>
+                            <a class="nav-link" href="index.html">home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="products.html">Magasin</a>
+                            <a class="nav-link" href="products.html">shop</a>
                         </li>
                     </ul>
-                    <ul class="nav justify-content-end">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-shopping-basket"></i></a>
-                        </li>
-                    </ul>
+                    <div class="cartButton">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cartModal">
+                            <i class="fas fa-shopping-basket"></i>
+                        </button>
+                        <p class="counter nbOfElements"></p>
+                        <!-- Modal -->
+                        <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">your cart</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>product</th>
+                                                    <th>name</th>
+                                                    <th>price</th>
+                                                    <th>quantity</th>
+                                                    <th>total</th>
+                                                    <th>&nbsp</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="cart-resume">
+                                                <tr>
+                                                    <td class="product-image"></td>
+                                                    <td class="product-name"></td>
+                                                    <td class="product-price"></td>
+                                                    <td class="product-quantity">
+                                                        <select>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="product-total-price">8,00 €</td>
+                                                    <td><i class="far fa-window-close"></i></td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="6">
+                        
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-success" data-dismiss="modal">proceed to checkout</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>                  
                 </div>             
             </nav>
         </div>
@@ -57,8 +116,8 @@
                                         <img src="images/blueberry-cake-P99JYMZ.jpg" alt="blueberry" class="img-fluid">
                                         <div class="details-wrapper pb-3">
                                             <h3>blueberry</h3>
-                                            <p>8,00€</p>
-                                            <button type="button" class="btn btn-success">Ajouter au panier</button>
+                                            <p data-price="8">8,00€</p>
+                                            <button type="button" class="btn btn-success btn-add-cart">Add to cart</button>
                                         </div> 
                                     </div>                
                                 </div>
@@ -68,7 +127,7 @@
                                         <div class="details-wrapper pb-3">
                                             <h3>mexican salsa sauce</h3>
                                             <p>8,00€</p>
-                                            <button type="button" class="btn btn-success">Ajouter au panier</button>
+                                            <button type="button" class="btn btn-success btn-add-cart">Add to cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -78,7 +137,7 @@
                                         <div class="details-wrapper pb-3">
                                             <h3>freh parsley</h3>
                                             <p>8,00€</p>
-                                            <button type="button" class="btn btn-success">Ajouter au panier</button>
+                                            <button type="button" class="btn btn-success btn-add-cart">Add to cart</button>
                                         </div>
                                     </div>   
                                 </div>
@@ -88,7 +147,7 @@
                                         <div class="details-wrapper pb-3">
                                             <h3>green peas</h3>
                                             <p>8,00€</p>
-                                            <button type="button" class="btn btn-success">Ajouter au panier</button>
+                                            <button type="button" class="btn btn-success btn-add-cart">Add to cart</button>
                                         </div>
                                     </div>   
                                 </div>
@@ -98,7 +157,7 @@
                                         <div class="details-wrapper pb-3">
                                             <h3>parsley</h3>
                                             <p>8,00€</p>
-                                            <button type="button" class="btn btn-success">Ajouter au panier</button>
+                                            <button type="button" class="btn btn-success btn-add-cart">Add to cart</button>
                                         </div>
                                     </div> 
                                 </div>
@@ -108,7 +167,7 @@
                                         <div class="details-wrapper pb-3">
                                             <h3>sage and rosmary</h3>
                                             <p>8,00€</p>
-                                            <button type="button" class="btn btn-success">Ajouter au panier</button>
+                                            <button type="button" class="btn btn-success btn-add-cart">Add to cart</button>
                                         </div>
                                     </div>  
                                 </div>
