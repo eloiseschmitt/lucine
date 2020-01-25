@@ -1,10 +1,24 @@
-/* Numer of item next icon in header */
-let nbItemInCart = 0;
-let $nbOfElements = $('.nbOfElements');
-
 const $cartResume = $('#cart-resume');
 let idsInCart = [];
 let idProductClicked = '';
+
+/* Numer of item next icon in header */
+let nbItemInCart = idsInCart.length;
+let $nbOfElements = $('.nbOfElements');
+
+let $totalPriceInCart = $('.total-cart');
+
+/* Function to calculate the total amount of the cart */
+function totalAmount() {
+    let total = 0;
+    if(idsInCart.length !== 0) {
+        for(let i=0 ; i<idsInCart.length ; i++) {
+            total += parseInt(idsInCart[i].quantity)*parseInt(idsInCart[i].price);
+        }
+    }
+    $totalPriceInCart.text(total+',00 €');
+}
+
 
 /* Add a product in cart or increment quantity */
 $('.btn-add-cart').on('click', function() {
@@ -39,10 +53,11 @@ $('.btn-add-cart').on('click', function() {
                         <option>5</option>
                     </select>
                 </td>
-                <td class="product-total-price">8,00 €</td>
-                <td><i class="far fa-window-close"></i></td>
+                <td class="product-total-price">${productPrice},00 €</td>
+                <td><i class="far fa-window-close" onclick="deleteRow(${idProductClicked});"></i></td>
             </tr>
         `);
+        totalAmount();
     }
     else {
         find.quantity++; // else increment quantity
@@ -84,14 +99,36 @@ $('.btn-add-cart').on('click', function() {
         }
         $('tbody').find(`tr[data-id=${idProductClicked}]`).children('td.product-quantity').children().html(optionSelected); // Modify option selected
         $('tbody').find(`tr[data-id=${idProductClicked}]`).children('td.product-total-price').text(find.quantity*find.price+',00 €'); // Modify total price
+        totalAmount();
     }
        
 });
 
 /* Modify quantity in cart by row */
 function modifyQuantity(val, idProductClicked) {
-    idProductClicked = idProductClicked;
     let find = idsInCart.find(product => product.id == idProductClicked); 
     find.quantity = parseInt(val.value);
     $('tbody').find(`tr[data-id=${idProductClicked}]`).children('td.product-total-price').text(find.quantity*find.price+',00 €'); // Modify total price
+    totalAmount();
 }
+/* Remove product reference from cart */
+function deleteRow(idProductClicked) {
+    let find = idsInCart.find(product => product.id == idProductClicked);
+    let index = idsInCart.indexOf(find);
+    idsInCart.splice(index, 1); // Remove the product in idsCart array
+
+    $('tbody').find(`tr[data-id=${idProductClicked}]`).remove(); // Remove from the dom
+    totalAmount();
+}
+
+/* Show Category */
+$('.sidebar li').on('click', function() {
+    let categoryClicked = $(this).text();
+    $('.product').hide(); // Hide all the categories
+    if(categoryClicked != 'all') {
+        $('.product-list').find(`div[data-category=${categoryClicked}]`).show(); //Show the only selected
+    }
+    else {
+        $('.product').show();
+    }   
+});

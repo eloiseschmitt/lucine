@@ -59,7 +59,8 @@
                                             <tfoot>
                                                 <tr>
                                                     <td colspan="6">
-                        
+                                                        <div class="float-left text-uppercase">total</div>
+                                                        <div class="float-right total-cart"></div>
                                                     </td>
                                                 </tr>
                                             </tfoot>
@@ -67,8 +68,8 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-success" data-dismiss="modal">proceed to checkout</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                                    <a href="paiement.html" class="btn-paiement"><button type="button" class="btn btn-success">proceed to checkout</button></a>
                                 </div>
                             </div>
                             </div>
@@ -88,15 +89,22 @@
         <div class="container">
             <div class="row mt-3">
                 <aside class="col-md-4">
-                    <div>
+                    <div class="sidebar">
                         <h2 class="text-uppercase">Categories</h2>
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i>all</li>
+                            <li><i class="fas fa-chevron-right"></i>vegetables</li>
+                            <li><i class="fas fa-chevron-right"></i>herbs</li>
+                            <li><i class="fas fa-chevron-right"></i>fruits</li>
+                            <li><i class="fas fa-chevron-right"></i>salsa</li>
+                        </ul>
                     </div>
                 </aside>
                 <div class="col-md-8">
                     <div class="row">
                         <div class="list-group product-list">
                             <div class="row">
-                                <div class="col-sm-4 col-xs-12 product">
+                                <div class="col-sm-4 col-xs-12 product" data-category="fruits">
                                     <div class="product-wrapper mb-3">
                                         <img src="images/blueberry-cake-P99JYMZ.jpg" alt="blueberry" class="img-fluid">
                                         <div class="details-wrapper pb-3">
@@ -106,7 +114,7 @@
                                         </div> 
                                     </div>                
                                 </div>
-                                <div class="col-sm-4 col-xs-12 product">
+                                <div class="col-sm-4 col-xs-12 product" data-category="salsa">
                                     <div class="product-wrapper mb-3">
                                         <img src="images/bowl-of-mexican-salsa-sauce-JNVRCYP.jpg" alt="mexican salsa sauce" class="img-fluid">
                                         <div class="details-wrapper pb-3">
@@ -116,7 +124,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-4 col-xs-12 product">
+                                <div class="col-sm-4 col-xs-12 product" data-category="herbs">
                                     <div class="product-wrapper mb-3">
                                         <img src="images/fresh-parsley-PWB8YQ9.jpg" alt="freh parsley" class="img-fluid">
                                         <div class="details-wrapper pb-3">
@@ -126,7 +134,7 @@
                                         </div>
                                     </div>   
                                 </div>
-                                <div class="col-sm-4 col-xs-12 product">
+                                <div class="col-sm-4 col-xs-12 product" data-category="vegetables">
                                     <div class="product-wrapper mb-3">
                                         <img src="images/green-peas-PNF3ML9.jpg" alt="green peas" class="img-fluid">
                                         <div class="details-wrapper pb-3">
@@ -136,7 +144,7 @@
                                         </div>
                                     </div>   
                                 </div>
-                                <div class="col-sm-4 col-xs-12 product">
+                                <div class="col-sm-4 col-xs-12 product" data-category="herbs">
                                     <div class="product-wrapper mb-3">
                                         <img src="images/parsley-PPH3MCN.jpg" alt="parsley" class="img-fluid">
                                         <div class="details-wrapper pb-3">
@@ -146,7 +154,7 @@
                                         </div>
                                     </div> 
                                 </div>
-                                <div class="col-sm-4 col-xs-12 product">
+                                <div class="col-sm-4 col-xs-12 product" data-category="herbs">
                                     <div class="product-wrapper mb-3">
                                         <img src="images/tied-twigs-of-sage-and-rosemary-PGXNDJX.jpg" alt="sage and rosmary" class="img-fluid">
                                         <div class="details-wrapper pb-3">

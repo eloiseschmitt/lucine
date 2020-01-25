@@ -6,6 +6,7 @@ h1 a:hover {
 }
 nav a {
     color: #5a5652;
+    text-transform: capitalize;
 }
 nav a:hover {
     color: #008a00;
@@ -28,6 +29,25 @@ nav a:hover {
     width: 100%;
  
 }
+.btn-paiement {
+    color: #fff;
+}
+.btn-paiement:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.btn-primary {
+    background-color: #008a00;
+    border-color: #008a00;
+}
+.btn-primary:hover {
+    background-color: #015401;
+    border-color: #015401;
+}
+.btn-success {
+    background-color: #008a00;
+    border-color: #008a00;
+}
 .cartButton {
     position: relative;
     margin-left: 50px;
@@ -40,6 +60,9 @@ nav a:hover {
 .details-wrapper h3{
     text-transform: capitalize;
 }
+.fa-window-close {
+    cursor: pointer;
+}
 .product {
     text-align: center;
 }
@@ -49,6 +72,25 @@ nav a:hover {
 }
 .product-wrapper {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.sidebar {
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    padding: 26px;
+}
+.sidebar h2 {
+    color: #5a5652;
+    border-bottom: 3px solid #5a5652;
+}
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+.sidebar>ul>li {
+    cursor: pointer;
+    text-transform: capitalize;
+}
+.sidebar>ul>li>i {
+    margin-right: 10px;
 }
 .table {
     border: 1px solid #dbdbdb;
