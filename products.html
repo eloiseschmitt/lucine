@@ -32,11 +32,11 @@
                         </button>
                         <p class="counter nbOfElements"></p>
                         <!-- Modal -->
-                        <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-xl" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">your cart</h5>
+                                <h5 class="modal-title" id="cartModalLabel">your cart</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -55,22 +55,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody id="cart-resume">
-                                                <tr>
-                                                    <td class="product-image"></td>
-                                                    <td class="product-name"></td>
-                                                    <td class="product-price"></td>
-                                                    <td class="product-quantity">
-                                                        <select>
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>4</option>
-                                                            <option>5</option>
-                                                        </select>
-                                                    </td>
-                                                    <td class="product-total-price">8,00 €</td>
-                                                    <td><i class="far fa-window-close"></i></td>
-                                                </tr>
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -89,6 +73,7 @@
                             </div>
                             </div>
                         </div>
+                        <!-- End Modal -->
                     </div>                  
                 </div>             
             </nav>
@@ -115,7 +100,7 @@
                                     <div class="product-wrapper mb-3">
                                         <img src="images/blueberry-cake-P99JYMZ.jpg" alt="blueberry" class="img-fluid">
                                         <div class="details-wrapper pb-3">
-                                            <h3>blueberry</h3>
+                                            <h3 data-id="1">blueberry</h3>
                                             <p data-price="8">8,00€</p>
                                             <button type="button" class="btn btn-success btn-add-cart">Add to cart</button>
                                         </div> 
@@ -125,8 +110,8 @@
                                     <div class="product-wrapper mb-3">
                                         <img src="images/bowl-of-mexican-salsa-sauce-JNVRCYP.jpg" alt="mexican salsa sauce" class="img-fluid">
                                         <div class="details-wrapper pb-3">
-                                            <h3>mexican salsa sauce</h3>
-                                            <p>8,00€</p>
+                                            <h3 data-id="2">mexican salsa sauce</h3>
+                                            <p data-price="9">9,00€</p>
                                             <button type="button" class="btn btn-success btn-add-cart">Add to cart</button>
                                         </div>
                                     </div>
@@ -135,8 +120,8 @@
                                     <div class="product-wrapper mb-3">
                                         <img src="images/fresh-parsley-PWB8YQ9.jpg" alt="freh parsley" class="img-fluid">
                                         <div class="details-wrapper pb-3">
-                                            <h3>freh parsley</h3>
-                                            <p>8,00€</p>
+                                            <h3 data-id="3">freh parsley</h3>
+                                            <p data-price="2">2,00€</p>
                                             <button type="button" class="btn btn-success btn-add-cart">Add to cart</button>
                                         </div>
                                     </div>   
@@ -145,8 +130,8 @@
                                     <div class="product-wrapper mb-3">
                                         <img src="images/green-peas-PNF3ML9.jpg" alt="green peas" class="img-fluid">
                                         <div class="details-wrapper pb-3">
-                                            <h3>green peas</h3>
-                                            <p>8,00€</p>
+                                            <h3 data-id="4">green peas</h3>
+                                            <p data-price="5">5,00€</p>
                                             <button type="button" class="btn btn-success btn-add-cart">Add to cart</button>
                                         </div>
                                     </div>   
@@ -155,8 +140,8 @@
                                     <div class="product-wrapper mb-3">
                                         <img src="images/parsley-PPH3MCN.jpg" alt="parsley" class="img-fluid">
                                         <div class="details-wrapper pb-3">
-                                            <h3>parsley</h3>
-                                            <p>8,00€</p>
+                                            <h3 data-id="5">parsley</h3>
+                                            <p data-price="2">2,00€</p>
                                             <button type="button" class="btn btn-success btn-add-cart">Add to cart</button>
                                         </div>
                                     </div> 
@@ -165,8 +150,8 @@
                                     <div class="product-wrapper mb-3">
                                         <img src="images/tied-twigs-of-sage-and-rosemary-PGXNDJX.jpg" alt="sage and rosmary" class="img-fluid">
                                         <div class="details-wrapper pb-3">
-                                            <h3>sage and rosmary</h3>
-                                            <p>8,00€</p>
+                                            <h3 data-id="6">sage and rosmary</h3>
+                                            <p data-price="3">3,00€</p>
                                             <button type="button" class="btn btn-success btn-add-cart">Add to cart</button>
                                         </div>
                                     </div>  
