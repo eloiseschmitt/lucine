@@ -1,3 +1,6 @@
+html, body {
+    height: 100%;
+}
 h1 {
     color:#008a00;
 }
@@ -64,7 +67,7 @@ nav a:hover {
 .cartButton p {
     position: absolute;
     top: 0px;
-    right: 7px;
+    left: 32px;
 } 
 .details-wrapper h3{
     text-transform: capitalize;
