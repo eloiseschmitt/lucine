@@ -53,18 +53,16 @@ function maxReached() {
 
 /* Add a product in cart or increment quantity */
 $('.btn-add-cart').on('click', function() {
-    //nbItemInCart++; // Increase number of items next icon in header
-    //$nbOfElements.text(nbItemInCart);
-
     idProductClicked = $(this).parents('.product-wrapper').children('.details-wrapper').children('h3').data('id'); // id product clicked
-    let productPrice = $(this).parents('.product-wrapper').children('.details-wrapper').children('p').data('price');
-    let optionSelected = ""; 
+    let productPrice = $(this).parents('.product-wrapper').children('.details-wrapper').children('p').data('price'); //price product clicked
 
+    // Create an object with product informations 
     let idAndQuantity = {
         id: idProductClicked,
         quantity: 1,
         price: +productPrice
     }
+
     let find = idsInCart.find(product => product.id == idAndQuantity.id); 
     if(find == undefined) { // product id not already in cart, add it
         idsInCart.push(idAndQuantity);
@@ -88,7 +86,7 @@ $('.btn-add-cart').on('click', function() {
                 <td><i class="far fa-window-close" onclick="deleteRow(${idProductClicked});"></i></td>
             </tr>
         `);
-        totalAmount();
+        totalAmount(); //Calculate the total of the cart
     }
     else {
         find.quantity++; // else increment quantity
@@ -133,7 +131,7 @@ $('.btn-add-cart').on('click', function() {
         totalAmount();
     }
     $nbOfElements.text(nbItemInCart);
-    maxReached();
+    maxReached(); //Calculate the total of the cart
 });
 
 
