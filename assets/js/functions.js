@@ -3,27 +3,58 @@ let idsInCart = [];
 let idProductClicked = '';
 
 /* Numer of item next icon in header */
-let nbItemInCart = idsInCart.length;
+let nbItemInCart = 0;
 let $nbOfElements = $('.nbOfElements');
 
 let $totalPriceInCart = $('.total-cart');
 
-/* Function to calculate the total amount of the cart */
+/* Function to calculate the total amount of the cart + the number of items */
 function totalAmount() {
     let total = 0;
+    nbItemInCart = 0;
     if(idsInCart.length !== 0) {
         for(let i=0 ; i<idsInCart.length ; i++) {
             total += parseInt(idsInCart[i].quantity)*parseInt(idsInCart[i].price);
+            nbItemInCart += parseInt(idsInCart[i].quantity);
         }
     }
     $totalPriceInCart.text(total+',00 €');
 }
+/* Modify quantity in cart by row */
+function modifyQuantity(val, idProductClicked) {
+    let find = idsInCart.find(product => product.id == idProductClicked); 
+    find.quantity = parseInt(val.value);
+    $('tbody').find(`tr[data-id=${idProductClicked}]`).children('td.product-total-price').text(find.quantity*find.price+',00 €'); // Modify total price
+    totalAmount();
+    $nbOfElements.text(nbItemInCart);
+    maxReached();
+}
+/* Remove product reference from cart */
+function deleteRow(idProductClicked) {
+    let find = idsInCart.find(product => product.id == idProductClicked);
+    let index = idsInCart.indexOf(find);
+    idsInCart.splice(index, 1); // Remove the product in idsCart array
 
+    $('tbody').find(`tr[data-id=${idProductClicked}]`).remove(); // Remove from the dom
+    totalAmount();
+}
+/* Disable button add to cart if quantity max (5) is reached */
+function maxReached() {
+    for(let i=0 ; i< idsInCart.length ; i++) {
+        let idProductConcerned = idsInCart[i].id;
+            let buttonConcerned = $('.product-list').find(`h3[data-id=${idProductConcerned}]`).parents('div.details-wrapper').children('button');
+        if(idsInCart[i].quantity >=5) {
+            buttonConcerned.attr('disabled', 'disabled')
+        } else {
+            buttonConcerned.removeAttr('disabled');
+        }
+    }
+}
 
 /* Add a product in cart or increment quantity */
 $('.btn-add-cart').on('click', function() {
-    nbItemInCart++; // Increase number of items next icon in header
-    $nbOfElements.text(nbItemInCart);
+    //nbItemInCart++; // Increase number of items next icon in header
+    //$nbOfElements.text(nbItemInCart);
 
     idProductClicked = $(this).parents('.product-wrapper').children('.details-wrapper').children('h3').data('id'); // id product clicked
     let productPrice = $(this).parents('.product-wrapper').children('.details-wrapper').children('p').data('price');
@@ -101,25 +132,10 @@ $('.btn-add-cart').on('click', function() {
         $('tbody').find(`tr[data-id=${idProductClicked}]`).children('td.product-total-price').text(find.quantity*find.price+',00 €'); // Modify total price
         totalAmount();
     }
-       
+    $nbOfElements.text(nbItemInCart);
+    maxReached();
 });
 
-/* Modify quantity in cart by row */
-function modifyQuantity(val, idProductClicked) {
-    let find = idsInCart.find(product => product.id == idProductClicked); 
-    find.quantity = parseInt(val.value);
-    $('tbody').find(`tr[data-id=${idProductClicked}]`).children('td.product-total-price').text(find.quantity*find.price+',00 €'); // Modify total price
-    totalAmount();
-}
-/* Remove product reference from cart */
-function deleteRow(idProductClicked) {
-    let find = idsInCart.find(product => product.id == idProductClicked);
-    let index = idsInCart.indexOf(find);
-    idsInCart.splice(index, 1); // Remove the product in idsCart array
-
-    $('tbody').find(`tr[data-id=${idProductClicked}]`).remove(); // Remove from the dom
-    totalAmount();
-}
 
 /* Show Category */
 $('.sidebar li').on('click', function() {
