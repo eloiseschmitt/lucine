@@ -16,6 +16,9 @@ h4 {
 footer {
     background-color: #5a5652;
 }
+main {
+    min-height: 65%;
+}
 nav a {
     color: #5a5652;
     text-transform: capitalize;

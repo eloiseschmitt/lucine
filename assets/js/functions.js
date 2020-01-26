@@ -37,6 +37,7 @@ function deleteRow(idProductClicked) {
 
     $('tbody').find(`tr[data-id=${idProductClicked}]`).remove(); // Remove from the dom
     totalAmount();
+    $nbOfElements.text(nbItemInCart);
 }
 /* Disable button add to cart if quantity max (5) is reached */
 function maxReached() {
